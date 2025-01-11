@@ -6,6 +6,29 @@
     <title>Contact</title>
 </head>
 <body>
-    
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html" >Projects</a>
+        <a href="../contact/index.html" class="active" >Contact</a>
+        <a href="../resume/index.html">Resume</a>
+        <a href="https://github.com/YooNice100" target = "_blank">GitHub</a>
+        
+    </nav>
+
+    <h1>Contact Me</h1>
+
+    <form  action="mailto:euc003@ucsd.edu" method="POST" enctype="text/plain">
+        <label for = "email">Your Email:</label><br>
+        <input id="email" name="email" type="email" required><br><br>
+
+        <label for = "subject">Subject</label><br>
+        <input id="subject" name="subject" type="text"><br><br>
+
+        <label for="body">Message</label><br>
+        <textarea id="body" name="body" rows = "5"></textarea><br>
+
+        <button>Submit</button>
+
+    </form>
 </body>
 </html>
