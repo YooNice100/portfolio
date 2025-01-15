@@ -40,13 +40,6 @@ body {
     padding-bottom: 0.2em;
   }
 
-  /* input, textarea, button {
-    display: grid;
-    font: inherit;
-    width: 100%;
-    box-sizing: border-box;
-    margin-block: 0.5em 0;
-  } */
 
   form {
     display: grid;
@@ -66,4 +59,74 @@ body {
     width: 100%;
     box-sizing: border-box;
   }
+
+  .projects {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em;
+    padding: 1em;
+  }
+
+  .projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 1em;
+
+  }
+
+  .projects h2 {
+    margin: 0;
+    font-size: 2em;
+  }
+
+  main section {
+    padding-top: 1em;
+    border-top: 2px solid #ccc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+  }
+
+  section article p {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section article time {
+    margin-left: auto;
+  }
+
+  h1 {
+    font-size: 400%;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  .header-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-date time {
+    font-size: 0.9em;
+    color: #666;
+
+  }
+
+  a {
+    color: blue;
+  }
+
+  a:hover {
+    color: purple;
+  }
+
+
 
