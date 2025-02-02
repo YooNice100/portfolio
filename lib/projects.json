@@ -1,0 +1,75 @@
+[
+    {
+        "title": "AKPsi Recruitment Website",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Implemented Figma Design. Used PostGresSQL to track over 300+ applicants"
+    },
+    {
+        "title": "League of Legends Data Set Analysis",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Conducted exploratory data analysis and predictive modeling in 2020 League of Legends Tournament dataset"
+    },
+    {
+        "title": "PledgeStar Internship",
+        "year": "2021",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyQlEfRL3d_fPYCiyq7R2QCp00yxmKY-1k-w&s",
+        "description": "Engineered a lightshow app."
+    },
+    {
+        "title": "Poop Tracker App",
+        "year": "2020",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tracks the quantity and qualities of poop"
+    },
+    {
+        "title": "Egg Boiler App",
+        "year": "2020",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Helps you time hard, medium, and soft boiled eggs."
+    },
+    {
+        "title": "Cooking App",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Help teach new people learn how to cook with a community based chat to help others"
+    },
+    {
+        "title": "Random Excuse Generator",
+        "year": "2021",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Generates a semi-believable excuse for why you missed and assignment, a meeting, or any responsibility. "
+    },
+    {
+        "title": "Parking Ticketer Monitor",
+        "year": "2021",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tracks location of people who give out parking tickets through the help of community"
+    },
+    {
+        "title": "Get Your Life Together App",
+        "year": "2020",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Helps you build habits over time and help get your life together."
+    },
+    {
+        "title": "Track your sleep app",
+        "year": "2019",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tracks the amount of sleep you get everyday and every week."
+    },
+    {
+        "title": "Calorie tracker",
+        "year": "2018",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Track how many calories you are intaking and how many calories you are burning"
+    },
+    {
+        "title": "Car tracker",
+        "year": "2017",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Be able to track the cars in all your household. "
+    }
+]
+
