@@ -7,7 +7,7 @@ const projects = await fetchJSON('../lib/projects.json');
 const projectsContainer = document.querySelector('.projects');
 renderProjects(projects, projectsContainer, 'h2');
 
-
+let selectedIndex = -1;
 
 
 let searchInput = document.querySelector('.searchBar');
@@ -33,19 +33,6 @@ function renderPieChart(projectsGiven) {
     let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
       
     let arcData = sliceGenerator(newData);
-      
-      
-      
-    newSVG.selectAll('path')
-        .data(arcData)
-        .enter()
-        .append('path')
-        .attr('d', arcGenerator)
-        .attr('fill', (d, idx) => colors(idx))
-        .attr('transform', 'translate(0,0)');
-        
-      
-      
     let legend = d3.select('.legend');
       
       
@@ -53,8 +40,33 @@ function renderPieChart(projectsGiven) {
       legend.append('li')
         .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
         .attr('class', 'legend li')
-        .html(`<span class="swatch" style = "background-color: ${colors(idx)}"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
+        .html(`<span class='swatch'"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
       })
+
+    let clickedIndex;
+      
+    newSVG.selectAll('path')
+        .data(arcData)
+        .enter()
+        .append('path')
+        .attr('d', arcGenerator)
+        .attr('fill', (d, idx) => colors(idx))
+        .attr('transform', 'translate(0,0)')
+        .attr('cursor', 'pointer')  // Makes wedges visually clickable
+        .on('click', function (_, d) {  // Click event to handle selection
+            clickedIndex = arcData.indexOf(d);
+
+            // Toggle selection
+            selectedIndex = selectedIndex === clickedIndex ? -1 : clickedIndex;
+
+            // Apply CSS class for highlighting
+            newSVG.selectAll('path')
+                .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+
+        d3.selectAll('.legend li')
+            .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+
+          });  
       
       
 }
