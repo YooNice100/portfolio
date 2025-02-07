@@ -175,4 +175,51 @@ body {
   }
 
 
+  #projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+  
+    overflow: visible;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+  }
+
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 12px;
+    border: 1px solid #ccc;
+    padding: 10x;
+    margin: 1rem 0;
+    flex: 1;
+    list-style: none;
+    align-items: center;
+  }
+
+
+  .legend li {
+    display: flex;
+    align-items: center;
+    border: none;
+    gap: 5px;
+    
+  }
+
+
+
+  .legend li .swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var--(color);
+  }
+
+
+
 
