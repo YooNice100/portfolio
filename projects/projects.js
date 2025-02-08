@@ -39,34 +39,49 @@ function renderPieChart(projectsGiven) {
     newData.forEach((d, idx) => {
       legend.append('li')
         .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
-        .attr('class', 'legend li')
         .html(`<span class='swatch'"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
       })
 
     let clickedIndex;
       
     newSVG.selectAll('path')
-        .data(arcData)
-        .enter()
-        .append('path')
-        .attr('d', arcGenerator)
-        .attr('fill', (d, idx) => colors(idx))
-        .attr('transform', 'translate(0,0)')
-        .attr('cursor', 'pointer')  // Makes wedges visually clickable
-        .on('click', function (_, d) {  // Click event to handle selection
-            clickedIndex = arcData.indexOf(d);
+      .data(arcData)
+      .enter()
+      .append('path')
+      .attr('d', arcGenerator)
+      .attr('fill', (d, idx) => colors(idx))
+      .attr('transform', 'translate(0,0)')
+      .attr('cursor', 'pointer')  // Makes wedges visually clickable
+      .on('click', function (_, d) {  // Click event to handle selection
 
-            // Toggle selection
-            selectedIndex = selectedIndex === clickedIndex ? -1 : clickedIndex;
+          clickedIndex = arcData.indexOf(d);
 
-            // Apply CSS class for highlighting
-            newSVG.selectAll('path')
-                .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+          
 
-        d3.selectAll('.legend li')
-            .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+          // Toggle selection
+          selectedIndex = selectedIndex === clickedIndex ? -1 : clickedIndex;
 
-          });  
+          // Apply CSS class for highlighting
+          newSVG.selectAll('path')
+              .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+
+           d3.selectAll('.legend li')
+          .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+
+
+          if (selectedIndex === -1) {
+            renderProjects(projects, projectsContainer, 'h2');
+          } else {
+            // TODO: filter projects and project them onto webpage
+            // Hint: `.label` might be useful
+            let selectedYear = newData[selectedIndex].label;
+            let filteredProjects = projects.filter(project => project.year === selectedYear);
+            renderProjects(filteredProjects, projectsContainer, 'h2');
+          }
+
+          
+
+        });  
       
       
 }
