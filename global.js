@@ -136,12 +136,21 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     img.src = project.image?.trim() || 'placeholder.png';
     img.alt = project.title?.trim() || 'Project image';
 
+    const descriptionContainer = document.createElement('div');
+
     const description = document.createElement('p');
     description.textContent = project.description || 'No description';
 
+    const year = document.createElement('p');
+    year.textContent = project.year || 'No Year'
+
+    descriptionContainer.append(description);
+    descriptionContainer.append(year);
+
     article.appendChild(heading);
     article.appendChild(img);
-    article.appendChild(description);
+    article.appendChild(descriptionContainer);
+    // article.appendChild(year);
 
     // article.innerHTML = `
     // <h3>${project.title}</h3>

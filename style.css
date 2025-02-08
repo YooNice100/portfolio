@@ -175,4 +175,77 @@ body {
   }
 
 
+  #projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+  
+    overflow: visible;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+  }
+
+  .legend {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 1rem 0;
+    flex: 1;
+    list-style: none;
+
+  }
+
+
+  .legend li {
+    display: flex;
+    align-items: center;
+    border: none;
+    gap: 5px;
+    
+  }
+
+
+
+  .legend li .swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    display: inline-block;
+    background-color: var(--color);
+  }
+
+  path {
+    transition: 300ms;
+    cursor: pointer;
+  }
+
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+
+
+  .selected {
+    --color: oklch(60% 45% 0) !important;
+    &:is(path) {
+      fill: var(--color);
+    }
+    &:is(li) {
+      font-weight: bold;
+      /* color: var(--color); */
+    }}
+
+
+
+
+
 
