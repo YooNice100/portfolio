@@ -191,7 +191,6 @@ body {
 
   .legend {
     width: auto;
-    /* min-height: 100px; */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
     gap: 12px;

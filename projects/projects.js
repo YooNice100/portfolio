@@ -12,6 +12,7 @@ let selectedIndex = -1;
 
 let searchInput = document.querySelector('.searchBar');
 
+
 function renderPieChart(projectsGiven) {
     let newSVG = d3.select('svg');
     newSVG.selectAll('path').remove();
@@ -38,11 +39,11 @@ function renderPieChart(projectsGiven) {
       
     newData.forEach((d, idx) => {
       legend.append('li')
-        .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
-        .html(`<span class='swatch'"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
+        .attr('style', `--color:${colors(idx)}`) 
+        .html(`<span class='swatch'"></span> ${d.label} <em>(${d.value})</em>`); 
       })
 
-    let clickedIndex;
+
       
     newSVG.selectAll('path')
       .data(arcData)
@@ -51,46 +52,37 @@ function renderPieChart(projectsGiven) {
       .attr('d', arcGenerator)
       .attr('fill', (d, idx) => colors(idx))
       .attr('transform', 'translate(0,0)')
-      .attr('cursor', 'pointer')  // Makes wedges visually clickable
-      .on('click', function (_, d) {  // Click event to handle selection
+      .attr('cursor', 'pointer')  
+      .on('click', function (_, d) {  
 
-          clickedIndex = arcData.indexOf(d);
+        let clickedIndex = arcData.indexOf(d);
+        selectedIndex = selectedIndex === clickedIndex ? -1 : clickedIndex;
 
-          
+        newSVG.selectAll('path')
+            .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
 
-          // Toggle selection
-          selectedIndex = selectedIndex === clickedIndex ? -1 : clickedIndex;
-
-          // Apply CSS class for highlighting
-          newSVG.selectAll('path')
-              .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
-
-           d3.selectAll('.legend li')
-          .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+          d3.selectAll('.legend li')
+        .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
 
 
-          if (selectedIndex === -1) {
-            renderProjects(projects, projectsContainer, 'h2');
-          } else {
-            // TODO: filter projects and project them onto webpage
-            // Hint: `.label` might be useful
-            let selectedYear = newData[selectedIndex].label;
-            let filteredProjects = projects.filter(project => project.year === selectedYear);
-            renderProjects(filteredProjects, projectsContainer, 'h2');
-          }
+        if (selectedIndex === -1) {
+          renderProjects(projectsGiven, projectsContainer, 'h2');
+        } else {
+          // TODO: filter projects and project them onto webpage
+          // Hint: `.label` might be useful
+          let selectedYear = newData[selectedIndex].label;
+          let filteredProjects = projectsGiven.filter(project => project.year === selectedYear);
+          renderProjects(filteredProjects, projectsContainer, 'h2');
+        }
 
-          
+        
 
-        });  
-      
-      
+      });  
+    
 }
 
 
-// let query = ''; 
 renderPieChart(projects);
-
-
 
 searchInput.addEventListener('input', (event) => {
   // update query value
