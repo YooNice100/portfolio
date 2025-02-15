@@ -318,4 +318,24 @@ circle.selected {
   fill: #ff6b6b;
 }
 
+.stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
 
+
+.stats dt {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  grid-row: 1;
+}
+
+.stats dd {
+  font-size: 22px;
+  margin: 0;
+  grid-row: 2;
+}
