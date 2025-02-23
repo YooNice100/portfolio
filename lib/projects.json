@@ -36,10 +36,10 @@
         "description": "Help teach new people learn how to cook with a community based chat to help others"
     },
     {
-        "title": "Random Excuse Generator",
-        "year": "2021",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Generates a semi-believable excuse for why you missed and assignment, a meeting, or any responsibility. "
+        "title": "Bike Geospatial Visualization",
+        "year": "2025",
+        "image": "bikewebsite.PNG",
+        "description": "Interactive bike map of Boston"
     },
     {
         "title": "Parking Ticketer Monitor",

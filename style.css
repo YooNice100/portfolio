@@ -95,6 +95,14 @@ body {
     font-size: 2em;
   }
 
+  .projects img {
+    max-width: 100%; /* Ensures the image doesn't exceed its container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Prevents extra space below the image */
+    margin: auto; /* Centers the image */
+}
+
+
   main section {
     padding-top: 1em;
     border-top: 2px solid #ccc;
